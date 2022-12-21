@@ -14,13 +14,19 @@ void setup() {
   //size (500,600); //display geometry
   minim = new Minim(this);
   song1 = minim.loadFile("../Music Used/This_is_a_Jazz_Space.mp3");
-  song1.play();
+  
+  
 }//End setup
 //
 void draw() {
 }//End draw
 //
 void keyPressed() {
+  //keyboard shortcuts
+  //first play button
+  if ( key== 'H' || key== 'h' ) song1.play();
+  //second play button, loop ONCE
+  if ( key== 'J' || key=='j' ) song1.loop(0);
 }//End keyPressed 
 //
 void mousePressed() {
