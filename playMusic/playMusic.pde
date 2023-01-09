@@ -33,9 +33,20 @@ void keyPressed() {
     } else {
       song1.play();
     }
-  }//End PLAY PAUSE Feature
-
-
+    //
+   }//End PLAY PAUSE Feature
+   //PLAY PAUSE STOP Feature
+    if ( key=='P' || key=='p' ) {
+    if ( song1.isPlaying() ) {
+      song1.pause();
+    } else if ( song1.position() >= song1.length()-song1.length()*1/5 ) {
+      song1.rewind();
+      song1.play();
+    } else {
+      song1.play(); //Parameter is milli-seconds from start of audio file to start playing
+    }
+   }//End PLAY PAUSE Feature
+  //
   //second play button, loop ONCE
   if ( key== 'J' || key=='j' ) song1.loop(1);//paramter is number of repeates
   //Infinite loop
